@@ -26,7 +26,7 @@ if (!$params || !empty($gen->errors)) {
   exit;
 }
 $rank = empty($params['access_rank']) ? (
-  $session instanceof Session ? $session->access_rank : 0
+  $session instanceof Session ? $session->access_rank() : 0
 ) : $params['access_rank'];
 $nav_file = PRJ_ROOT . "/.system/.navigation";
 if (!\file_exists($nav_file)) {
