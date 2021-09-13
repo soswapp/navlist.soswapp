@@ -17,7 +17,7 @@ $params = $gen->requestParam([
   "access_rank" => ["access_rank","int"]
 ],$post,["group"]);
 if (!$params || !empty($gen->errors)) {
-  $errors = (new InstanceError($gen,true))->get("requestParam",true);
+  $errors = (new InstanceError($gen, false))->get("requestParam",true);
   echo \json_encode([
     "status" => "3." . \count($errors),
     "errors" => $errors,
